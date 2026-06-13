@@ -41,7 +41,7 @@
     z-index: 9999;
     max-width: 200px;
 
-    background: black;          /* черный фон */
+    background: black;
     padding: 0px 0px;
     display: inline-block;
 }
@@ -54,9 +54,9 @@
 }
 
 .container {
-    max-width: 930px;   /* регулируй ширину */
-    margin: 0 auto;      /* центрирует */
-    padding: 40px 40px;  /* внутренний отступ */
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 40px 40px;
 }
 
 body {
@@ -72,22 +72,59 @@ body {
     inset: 0;
     background: black;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 9999;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.8s ease;
 }
 
-.loader-text {
-    font-size: 32px;
+.loader-name {
+    font-size: 52px;
+    letter-spacing: 18px;
+    font-weight: 900;
+    color: white;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: loaderReveal 0.8s ease forwards 0.1s;
+}
+
+.loader-role {
+    font-size: 11px;
     letter-spacing: 6px;
-    animation: pulse 3.5s infinite;
+    color: rgba(255,255,255,0.4);
+    margin-top: 10px;
+    opacity: 0;
+    animation: loaderReveal 0.8s ease forwards 0.4s;
 }
 
-@keyframes pulse {
-    0% { opacity: 0.3; }
-    50% { opacity: 1; }
-    100% { opacity: 0.3; }
+.loader-bar-wrap {
+    width: 200px;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-top: 50px;
+    opacity: 0;
+    animation: loaderReveal 0.5s ease forwards 0.6s;
+}
+
+.loader-bar {
+    height: 1px;
+    width: 0%;
+    background: white;
+    transition: width 0.05s linear;
+}
+
+.loader-percent {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.3);
+    margin-top: 14px;
+    opacity: 0;
+    animation: loaderReveal 0.5s ease forwards 0.6s;
+}
+
+@keyframes loaderReveal {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* HEADER */
@@ -102,6 +139,18 @@ body {
 .right-title {
     text-align: right;
     line-height: 1.5;
+}
+
+/* BIO */
+.bio {
+    max-width: 850px;
+    margin: 0 auto 40px auto;
+    padding: 0 40px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.7;
+    opacity: 0.55;
+    letter-spacing: 0.5px;
 }
 
 /* GRID */
@@ -150,14 +199,14 @@ body {
     position: absolute;
     bottom: 20px;
     left: 20px;
-    opacity: 1;                 /* всегда видно */
-    background: none;           /* убираем затемнение */
+    opacity: 1;
+    background: none;
 }
 
 .title {
     font-size: 16px;
     letter-spacing: 2px;
-    background: black;          /* черный фон */
+    background: black;
     padding: 0px 0px;
     display: inline-block;
 }
@@ -189,7 +238,7 @@ body {
 .footer {
   background: #000;
   color: #fff;
-  padding: 120px 80px; /* отступы слева/справа */
+  padding: 120px 80px;
 }
 
 .footer-content {
@@ -262,6 +311,12 @@ body {
         margin-bottom: 16px;
     }
 
+    .bio {
+        padding: 0 20px;
+        font-size: 0.85rem;
+        margin-bottom: 24px;
+    }
+
     .grid {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
@@ -310,7 +365,12 @@ body {
 
 <!-- PRELOADER -->
 <div id="loader">
-    <div class="loader-text">Loading</div>
+    <div class="loader-name">CAPEKERE</div>
+    <div class="loader-role">DIRECTOR &nbsp;&nbsp;/&nbsp;&nbsp; VFX ARTIST</div>
+    <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loaderBar"></div>
+    </div>
+    <div class="loader-percent" id="loaderPercent">0%</div>
 </div>
 
 <!-- HEADER -->
@@ -325,7 +385,8 @@ body {
 
 </div>
 
-
+<!-- BIO -->
+<p class="bio">Hey, I'm Adil — I go by Capekere. I make music videos and build visual effects for artists I believe in. Based in Almaty, I've had the chance to work with ALPHA, Ninety One, Sadraddin and more. This is a collection of everything I've made so far.</p>
 
 <!-- GRID -->
 <div class="grid">
@@ -642,8 +703,6 @@ body {
         </a>
     </div>
 
-    
-
     <div class="video-card" data-project="Directed by Madi Zhagi" data-role="VFX" data-year="2021">
         <a href="https://www.youtube.com/watch?v=2LFTgtS_4QM&list=RD2LFTgtS_4QM&start_radio=1" target="_blank" class="video-link">
                 <video data-src="tele2.mp4" muted loop playsinline></video>
@@ -652,8 +711,6 @@ body {
                 </div>
         </a>
     </div>
-
-    
 
     <div class="video-card" data-project="Directed by Kuanysh Beisek" data-role="VFX/COMPOSE" data-year="2022">
         <a href="https://www.youtube.com/watch?v=Fy83MrpshhA&pp=0gcJCb4KAYcqIYzv" target="_blank" class="video-link">
@@ -677,7 +734,7 @@ body {
     <div class="footer-links">
       <a href="https://www.instagram.com/capekere/">Instagram</a>
       <a href="https://vimeo.com/capekere">Vimeo</a>
-      <a href="#">Telegram</a>
+      <a href="https://t.me/capekere">Telegram</a>
     </div>
 
     <p class="footer-copy">© CAPEKERE 2026</p>
@@ -687,25 +744,31 @@ body {
 <script>
 
 /* =========================
-   LOADER WITH PERCENT
+   LOADER
 ========================= */
 
 window.addEventListener("load", function() {
     const loader = document.getElementById("loader");
-    const loaderText = document.querySelector(".loader-text");
+    const bar = document.getElementById("loaderBar");
+    const percent = document.getElementById("loaderPercent");
 
     let progress = 0;
-    const interval = setInterval(() => {
+    const duration = 1500;
+    const steps = 100;
+    const interval = duration / steps;
+
+    const tick = setInterval(() => {
         progress++;
-        loaderText.innerText = progress + "%";
+        bar.style.width = progress + "%";
+        percent.innerText = progress + "%";
         if (progress >= 100) {
-            clearInterval(interval);
-            loader.style.opacity = "0";
+            clearInterval(tick);
             setTimeout(() => {
-                loader.style.display = "none";
-            }, 600);
+                loader.style.opacity = "0";
+                setTimeout(() => loader.style.display = "none", 800);
+            }, 200);
         }
-    }, 15);
+    }, interval);
 });
 
 
