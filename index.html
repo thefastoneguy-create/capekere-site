@@ -8,10 +8,6 @@
 
 <style>
 
-    /* =========================
-   CUSTOM CURSOR STYLE
-========================= */
-
 .custom-cursor {
     position: fixed;
     width: 14px;
@@ -40,13 +36,11 @@
     transition: opacity 0.2s ease;
     z-index: 9999;
     max-width: 200px;
-
     background: black;
     padding: 0px 0px;
     display: inline-block;
 }
 
-/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -80,7 +74,7 @@ body {
 }
 
 .loader-name {
-    font-size: 25px;
+    font-size: 30px;
     letter-spacing: 18px;
     font-weight: 900;
     color: white;
@@ -183,7 +177,6 @@ body {
     display: block;
 }
 
-/* Hover Effects */
 .video-card:hover {
     border: 1px solid rgb(196, 196, 196);
 }
@@ -192,7 +185,6 @@ body {
     transform: scale(1.03);
 }
 
-/* Overlay */
 .overlay {
     position: absolute;
     bottom: 20px;
@@ -202,8 +194,8 @@ body {
 }
 
 .title {
-    font-size: 16px;
-    letter-spacing: 2px;
+    font-size: 14px;
+    letter-spacing: 3px;
     background: black;
     padding: 0px 0px;
     display: inline-block;
@@ -213,12 +205,6 @@ body {
     opacity: 1;
 }
 
-.title {
-    font-size: 14px;
-    letter-spacing: 3px;
-}
-
-/* Fade in animation */
 .grid {
     opacity: 0;
     transform: translateY(30px);
@@ -233,6 +219,7 @@ body {
     }
 }
 
+/* FOOTER */
 .footer {
   background: #000;
   color: #fff;
@@ -295,10 +282,48 @@ body {
   color: #555;
 }
 
+/* BACK TO TOP */
+#backToTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s ease;
+    z-index: 9000;
+    text-decoration: none;
+}
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+#backToTop.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    border-color: rgba(255,255,255,0.9);
+}
+
+#backToTop svg {
+    width: 16px;
+    height: 16px;
+    stroke: white;
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* MOBILE */
 @media (max-width: 600px) {
     .container {
         padding: 24px 20px;
@@ -350,9 +375,14 @@ body {
         font-size: 13px;
     }
 
-    /* Hide custom cursor on mobile */
     .custom-cursor, .cursor-info {
         display: none !important;
+    }
+
+    #backToTop {
+        bottom: 24px;
+        right: 20px;
+        cursor: pointer;
     }
 }
 
@@ -370,213 +400,170 @@ body {
     <div class="loader-percent" id="loaderPercent">0%</div>
 </div>
 
+<!-- BACK TO TOP -->
+<a id="backToTop" href="#" aria-label="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</a>
+
 <!-- HEADER -->
 <div class="container">
-
     <div class="header">
         <div>CAPEKERE</div>
-        <div class="right-title">
-            DIRECTOR
-        </div>
+        <div class="right-title">DIRECTOR</div>
     </div>
-
     <p class="bio">Hey, I'm Adil — I go by Capekere. I make music videos and build visual effects for artists I believe in. Based in Almaty, I've had the chance to work with ALPHA, Ninety One, Sadraddin and more. This is a collection of everything I've made so far.</p>
-
 </div>
 
 <!-- GRID -->
 <div class="grid">
 
-     <div class="video-card" data-project="ALPHA – Jiber" data-role="Director/VFX" data-year="2026">
+    <div class="video-card" data-project="ALPHA – Jiber" data-role="Director/VFX" data-year="2026">
         <a href="https://www.youtube.com/watch?v=OzEfXbicVak&list=RDOzEfXbicVak&start_radio=1" target="_blank" class="video-link">
             <video data-src="jiber.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">ALPHA - Jiber</span>
-            </div>
+            <div class="overlay"><span class="title">ALPHA - Jiber</span></div>
         </a>
     </div>
-    
+
     <div class="video-card" data-project="ALPHA – SULU" data-role="Director/VFX" data-year="2025">
         <a href="https://www.youtube.com/watch?v=d8-syERAW7I&list=RDd8-syERAW7I&start_radio=1" target="_blank" class="video-link">
             <video data-src="sulu.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">ALPHA - SULU</span>
-            </div>
+            <div class="overlay"><span class="title">ALPHA - SULU</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="ALPHA – EMMA" data-role="Director" data-year="2025">
         <a href="https://www.youtube.com/watch?v=s8Tk7K5NkAI&list=RDs8Tk7K5NkAI&start_radio=1" target="_blank" class="video-link">
             <video data-src="emma.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">ALPHA - EMMA</span>
-            </div>
+            <div class="overlay"><span class="title">ALPHA - EMMA</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="ALPHA – Qaryndas PROMO" data-role="Director" data-year="2026">
         <a href="https://www.instagram.com/p/DWoUs2tDCPd/" target="_blank" class="video-link">
             <video data-src="qaryndaspromo.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">ALPHA - Qaryndas PROMO</span>
-            </div>
+            <div class="overlay"><span class="title">ALPHA - Qaryndas PROMO</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="ALPHA – QIYALMADYM" data-role="Director/VFX" data-year="2025">
         <a href="https://www.youtube.com/watch?v=AFatWVMXHFQ&list=RDAFatWVMXHFQ&start_radio=1" target="_blank" class="video-link">
             <video data-src="qiyalmadym.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">ALPHA - QIYALMADYM</span>
-            </div>
+            <div class="overlay"><span class="title">ALPHA - QIYALMADYM</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="ALPHA – WTA" data-role="Director" data-year="2025">
         <a href="https://www.youtube.com/watch?v=VJhJfpzYxm4&list=RDVJhJfpzYxm4&start_radio=1" target="_blank" class="video-link">
             <video data-src="wta.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">ALPHA - WTA</span>
-            </div>
+            <div class="overlay"><span class="title">ALPHA - WTA</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="NINETY ONE – eMOJI" data-role="Director/VFX" data-year="2023">
         <a href="https://www.youtube.com/watch?v=aBRGcc8mQFk&list=RDaBRGcc8mQFk&start_radio=1" target="_blank" class="video-link">
             <video data-src="emoji.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">NINETY ONE - eMOJI</span>
-            </div>
+            <div class="overlay"><span class="title">NINETY ONE - eMOJI</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="NINETY ONE – DRIFT" data-role="Director" data-year="2022">
         <a href="https://www.youtube.com/watch?v=qCCs17L3DF8&list=RDqCCs17L3DF8&start_radio=1" target="_blank" class="video-link">
             <video data-src="drift.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">NINETY ONE - DRIFT</span>
-            </div>
+            <div class="overlay"><span class="title">NINETY ONE - DRIFT</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="NINETY ONE – ORIK" data-role="Director" data-year="2022">
         <a href="https://www.youtube.com/watch?v=BDbnCac_MxU&list=RDBDbnCac_MxU&start_radio=1" target="_blank" class="video-link">
             <video data-src="orik.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">NINETY ONE - ORIK</span>
-            </div>
+            <div class="overlay"><span class="title">NINETY ONE - ORIK</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="ALPHA – Qaryndas" data-role="Director" data-year="2026">
         <a href="https://www.youtube.com/watch?v=vOxXqwguQkk&list=RDvOxXqwguQkk&start_radio=1" target="_blank" class="video-link">
             <video data-src="qaryndas.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">ALPHA - Qaryndas</span>
-            </div>
+            <div class="overlay"><span class="title">ALPHA - Qaryndas</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="ALPHA – DEMIM" data-role="Director" data-year="2026">
         <a href="https://www.youtube.com/watch?v=0HpnNbC7QKg&list=RD0HpnNbC7QKg&start_radio=1" target="_blank" class="video-link">
             <video data-src="demim.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">ALPHA - DEMIM</span>
-            </div>
+            <div class="overlay"><span class="title">ALPHA - DEMIM</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="ALPHA – JYLAMA" data-role="Director" data-year="2025">
         <a href="https://www.youtube.com/watch?v=E3UkAKYxQbw&list=RDE3UkAKYxQbw&start_radio=1" target="_blank" class="video-link">
             <video data-src="jylama.mp4" muted loop playsinline></video>
-            <div class="overlay">
-                <span class="title">ABOO - JYLAMA</span>
-            </div>
+            <div class="overlay"><span class="title">ABOO - JYLAMA</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="IL'HAN - BERU KEREK PE?" data-role="Director/VFX" data-year="2025">
         <a href="https://www.youtube.com/watch?v=QRPjNvpUwl0&list=RDQRPjNvpUwl0&start_radio=1" target="_blank" class="video-link">
-                <video data-src="berukerekpe.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">IL'HAN - BERU KEREK PE?</span>
-                </div>
+            <video data-src="berukerekpe.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">IL'HAN - BERU KEREK PE?</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="PROMO" data-role="Director/VFX" data-year="2025">
         <a href="https://www.instagram.com/p/DNdaR6fszMT/" target="_blank" class="video-link">
-                <video data-src="i.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">ALPHA 4 years PROMO - I</span>
-                </div>
+            <video data-src="i.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ALPHA 4 years PROMO - I</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="PROMO" data-role="Director" data-year="2025">
         <a href="https://www.instagram.com/p/DNYQ36FswI5/" target="_blank" class="video-link">
-                <video data-src="nb.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">ALPHA 4 years PROMO - NB</span>
-                </div>
+            <video data-src="nb.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ALPHA 4 years PROMO - NB</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="PROMO" data-role="Director" data-year="2025">
         <a href="https://www.instagram.com/p/DNimESnsa4X/" target="_blank" class="video-link">
-                <video data-src="aboo.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">ALPHA 4 years PROMO - ABOO</span>
-                </div>
+            <video data-src="aboo.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ALPHA 4 years PROMO - ABOO</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="PROMO" data-role="Director" data-year="2025">
         <a href="https://www.instagram.com/p/DNntUEZMIjX/" target="_blank" class="video-link">
-                <video data-src="qozzy.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">ALPHA 4 years PROMO - QOZZY</span>
-                </div>
+            <video data-src="qozzy.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ALPHA 4 years PROMO - QOZZY</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="ALEM - ELESTET" data-role="Director/VFX" data-year="2025">
         <a href="https://www.youtube.com/watch?v=MqcLEMIc_7w&list=RDMqcLEMIc_7w&start_radio=1" target="_blank" class="video-link">
-                <video data-src="elestet.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">ALEM - ELESTET</span>
-                </div>
+            <video data-src="elestet.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ALEM - ELESTET</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="KYLE RUH - QARA JULDYZ" data-role="Director" data-year="2023">
         <a href="https://www.youtube.com/watch?v=vyYExtb1ssQ&list=RDvyYExtb1ssQ&start_radio=1" target="_blank" class="video-link">
-                <video data-src="qarajuldyz.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">KYLE RUH - QARA JULDYZ</span>
-                </div>
+            <video data-src="qarajuldyz.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">KYLE RUH - QARA JULDYZ</span></div>
         </a>
     </div>
 
-    <div class="video-card" data-project="ALPHA – DEMIM" data-role="Director/VFX" data-year="2025">
+    <div class="video-card" data-project="SAPAR - GHOST" data-role="Director/VFX" data-year="2025">
         <a href="https://www.youtube.com/watch?v=QQrZvb6Ln_U&list=RDQQrZvb6Ln_U&start_radio=1" target="_blank" class="video-link">
-                <video data-src="ghost.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">SAPAR - GHOST</span>
-                </div>
+            <video data-src="ghost.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">SAPAR - GHOST</span></div>
         </a>
     </div>
 
 </div>
-<div class="container">
 
+<div class="container">
     <div class="header">
         <div>CAPEKERE</div>
-        <div class="right-title">
-            VFX ARTIST
-        </div>
+        <div class="right-title">VFX ARTIST</div>
     </div>
-
 </div>
 
 <!-- GRID -->
@@ -584,174 +571,134 @@ body {
 
     <div class="video-card" data-project="Directed by Kuanysh Beisek" data-role="VFX" data-year="2023">
         <a href="https://www.kinopoisk.ru/film/5425709/" target="_blank" class="video-link">
-                <video data-src="dastur.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">DASTUR MOVIE</span>
-                </div>
+            <video data-src="dastur.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">DASTUR MOVIE</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Aitore Zholdaskali" data-role="VFX" data-year="2025">
         <a href="https://www.kinopoisk.ru/film/8946904/" target="_blank" class="video-link">
-                <video data-src="auru.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">AURU MOVIE</span>
-                </div>
+            <video data-src="auru.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">AURU MOVIE</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Alisher Utev" data-role="VFX" data-year="2025">
         <a href="https://www.kinopoisk.ru/film/6056623/" target="_blank" class="video-link">
-                <video data-src="dastur2.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">DASTUR 2 MOVIE</span>
-                </div>
+            <video data-src="dastur2.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">DASTUR 2 MOVIE</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Madi Zhagi" data-role="VFX" data-year="2022">
         <a href="https://www.youtube.com/watch?v=UsdhuIKmmDY" target="_blank" class="video-link">
-                <video data-src="abuse.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">NINETY ONE - ABUSE</span>
-                </div>
+            <video data-src="abuse.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">NINETY ONE - ABUSE</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Askhat Bayanov" data-role="VFX" data-year="2024">
         <a href="https://www.youtube.com/watch?v=1WP2TfkgtUQ&list=RD1WP2TfkgtUQ&start_radio=1" target="_blank" class="video-link">
-                <video data-src="taxi.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">SADRADDIN - TAXI</span>
-                </div>
+            <video data-src="taxi.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">SADRADDIN - TAXI</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Yernaz Sanat" data-role="VFX" data-year="2025">
         <a href="https://www.youtube.com/watch?v=0vgB7WlfN0c&list=RD0vgB7WlfN0c&start_radio=1" target="_blank" class="video-link">
-                <video data-src="tikitaka.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">ALPHA - TIKI TAKA</span>
-                </div>
+            <video data-src="tikitaka.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ALPHA - TIKI TAKA</span></div>
         </a>
-    </div> 
+    </div>
 
     <div class="video-card" data-project="Directed by Tumarbeq" data-role="VFX" data-year="2025">
         <a href="https://www.instagram.com/p/DOJGcCVCmLn/" target="_blank" class="video-link">
-                <video data-src="meili.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">YENLIK - MEILI SNIPPET</span>
-                </div>
+            <video data-src="meili.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">YENLIK - MEILI SNIPPET</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Tumarbeq" data-role="VFX" data-year="2025">
         <a href="https://www.instagram.com/p/DPjPzWSDLOt/" target="_blank" class="video-link">
-                <video data-src="kirispe.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">YENLIK - INTRO SNIPPET</span>
-                </div>
+            <video data-src="kirispe.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">YENLIK - INTRO SNIPPET</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Askhat Bayanov" data-role="VFX" data-year="2024">
         <a href="https://www.youtube.com/watch?v=pSBojboT454&list=RDpSBojboT454&start_radio=1" target="_blank" class="video-link">
-                <video data-src="okpeleme.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">ACE - OKPELEME</span>
-                </div>
+            <video data-src="okpeleme.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ACE - OKPELEME</span></div>
         </a>
-    </div> 
+    </div>
 
     <div class="video-card" data-project="Directed by Tumarbeq" data-role="VFX" data-year="2023">
         <a href="https://www.instagram.com/p/Cxsw96locvd/" target="_blank" class="video-link">
-                <video data-src="ik2.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">IRINA KAIRATOVNA - TOUR PROMO</span>
-                </div>
+            <video data-src="ik2.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">IRINA KAIRATOVNA - TOUR PROMO</span></div>
         </a>
-    </div> 
-    
+    </div>
+
     <div class="video-card" data-project="Directed by Tumarbeq" data-role="VFX" data-year="2024">
         <a href="https://www.youtube.com/watch?v=cLiJ-i2x9ok" target="_blank" class="video-link">
-                <video data-src="oneone.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">YENLIK feat. DE LACURE - ONE ONE</span>
-                </div>
+            <video data-src="oneone.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">YENLIK feat. DE LACURE - ONE ONE</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Askhat Bayanov" data-role="VFX" data-year="2024">
         <a href="https://www.youtube.com/watch?v=an8juF1vtz8" target="_blank" class="video-link">
-                <video data-src="jauapbarma.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">SADRADDIN - JAUAP BAR MA?</span>
-            </div>
+            <video data-src="jauapbarma.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">SADRADDIN - JAUAP BAR MA?</span></div>
         </a>
-    </div>    
+    </div>
 
     <div class="video-card" data-project="Directed by Saltanat Khamzina" data-role="VFX" data-year="2024">
         <a href="https://www.youtube.com/watch?v=2QaLZz-ZX-k" target="_blank" class="video-link">
-                <video data-src="algabas.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">DE LACURE - ALGABAS</span>
-                </div>
+            <video data-src="algabas.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">DE LACURE - ALGABAS</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Askhat Bayanov" data-role="VFX" data-year="2023">
         <a href="https://www.youtube.com/watch?v=CcB_aO2r-js" target="_blank" class="video-link">
-                <video data-src="jurmapelep.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">NINETY ONE - JUR MAPELEP</span>
-                </div>
+            <video data-src="jurmapelep.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">NINETY ONE - JUR MAPELEP</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Madi Zhagi" data-role="VFX" data-year="2021">
         <a href="https://www.youtube.com/watch?v=2LFTgtS_4QM&list=RD2LFTgtS_4QM&start_radio=1" target="_blank" class="video-link">
-                <video data-src="tele2.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">ZAQ - TELE 2</span>
-                </div>
+            <video data-src="tele2.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ZAQ - TELE 2</span></div>
         </a>
     </div>
 
     <div class="video-card" data-project="Directed by Kuanysh Beisek" data-role="VFX/COMPOSE" data-year="2022">
         <a href="https://www.youtube.com/watch?v=Fy83MrpshhA&pp=0gcJCb4KAYcqIYzv" target="_blank" class="video-link">
-                <video data-src="ik.mp4" muted loop playsinline></video>
-                <div class="overlay">
-                    <span class="title">IRINA KAIRATOVNA - MIKE KROSSOVKI</span>
-                </div>
+            <video data-src="ik.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">IRINA KAIRATOVNA - MIKE KROSSOVKI</span></div>
         </a>
-    </div>    
+    </div>
 
 </div>
 
 <footer class="footer">
   <div class="footer-content">
     <h2 class="footer-title">Open for collaborations</h2>
-    
-    <a href="mailto:adil.kazkenov@yandex.ru" class="footer-email">
-      adil.kazkenov@yandex.ru
-    </a>
-
+    <a href="mailto:adil.kazkenov@yandex.ru" class="footer-email">adil.kazkenov@yandex.ru</a>
     <div class="footer-links">
       <a href="https://www.instagram.com/capekere/">Instagram</a>
       <a href="https://vimeo.com/capekere">Vimeo</a>
       <a href="https://t.me/capekere">Telegram</a>
     </div>
-
     <p class="footer-copy">© CAPEKERE 2026</p>
   </div>
 </footer>
 
 <script>
 
-/* =========================
-   LOADER
-========================= */
-
+/* LOADER */
 window.addEventListener("load", function() {
     const loader = document.getElementById("loader");
     const bar = document.getElementById("loaderBar");
@@ -776,11 +723,23 @@ window.addEventListener("load", function() {
     }, interval);
 });
 
+/* BACK TO TOP */
+const backToTop = document.getElementById("backToTop");
 
-/* =========================
-   SIMPLE CUSTOM CURSOR
-========================= */
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 600) {
+        backToTop.classList.add("visible");
+    } else {
+        backToTop.classList.remove("visible");
+    }
+});
 
+backToTop.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+/* CUSTOM CURSOR */
 const cursor = document.createElement("div");
 cursor.classList.add("custom-cursor");
 document.body.appendChild(cursor);
@@ -794,45 +753,32 @@ document.body.style.cursor = "none";
 document.addEventListener("mousemove", (e) => {
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
-
     cursorInfo.style.left = e.clientX + 25 + "px";
     cursorInfo.style.top = e.clientY + 25 + "px";
 });
 
-
 const videoCards = document.querySelectorAll(".video-card");
 
 videoCards.forEach(card => {
-
     card.addEventListener("mouseenter", () => {
-
         const project = card.dataset.project;
         const role = card.dataset.role;
         const year = card.dataset.year;
-
         cursor.classList.add("active");
-
         cursorInfo.innerHTML = `
             <div style="font-weight:600;">${project}</div>
             <div style="opacity:0.6;">${role}</div>
             <div style="opacity:0.4;">${year}</div>
         `;
-
         cursorInfo.style.opacity = "1";
     });
-
     card.addEventListener("mouseleave", () => {
         cursor.classList.remove("active");
         cursorInfo.style.opacity = "0";
     });
-
 });
 
-
-/* =========================
-   NOISE OVERLAY
-========================= */
-
+/* NOISE OVERLAY */
 const noise = document.createElement("div");
 noise.style.position = "fixed";
 noise.style.inset = "0";
@@ -842,11 +788,7 @@ noise.style.opacity = "0.17";
 noise.style.backgroundImage = "url('https://grainy-gradients.vercel.app/noise.svg')";
 document.body.appendChild(noise);
 
-
-
-/* =========================
-   LAZY LOAD VIDEOS
-========================= */
+/* LAZY LOAD VIDEOS */
 const lazyVideos = document.querySelectorAll('video[data-src]');
 
 const videoObserver = new IntersectionObserver((entries) => {
@@ -862,7 +804,6 @@ const videoObserver = new IntersectionObserver((entries) => {
 
 lazyVideos.forEach(video => videoObserver.observe(video));
 
-/* Disable custom cursor on touch devices */
 if ('ontouchstart' in window) {
     document.body.style.cursor = '';
 }
