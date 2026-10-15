@@ -61,6 +61,19 @@ body {
     overflow-x: hidden;
 }
 
+/* LOGO */
+.logo-wrap {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.logo {
+    width: 110px;
+    height: auto;
+    display: block;
+}
+
 /* HEADER */
 .header {
     display: flex;
@@ -265,6 +278,14 @@ body {
 
 /* MOBILE */
 @media (max-width: 600px) {
+    .logo-wrap {
+        padding-top: 28px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
     .container {
         padding: 24px 20px;
     }
@@ -334,6 +355,11 @@ body {
 <a id="backToTop" href="#" aria-label="Back to top">
     <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
 </a>
+
+<!-- LOGO -->
+<div class="logo-wrap">
+    <img src="idstudio.png" alt="ID Studio" class="logo">
+</div>
 
 <!-- HEADER -->
 <div class="container">
@@ -512,13 +538,6 @@ body {
         <a href="https://www.youtube.com/watch?v=MqcLEMIc_7w&list=RDMqcLEMIc_7w&start_radio=1" target="_blank" class="video-link">
             <video data-src="elestet.mp4" muted loop playsinline></video>
             <div class="overlay"><span class="title">ALEM - ELESTET</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="KYLE RUH - QARA JULDYZ" data-role="Director" data-year="2023">
-        <a href="https://www.youtube.com/watch?v=vyYExtb1ssQ&list=RDvyYExtb1ssQ&start_radio=1" target="_blank" class="video-link">
-            <video data-src="qarajuldyz.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">KYLE RUH - QARA JULDYZ</span></div>
         </a>
     </div>
 
