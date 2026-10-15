@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
-<link rel="icon" href="ICON.png" type="image/png">
-<title>capekere</title>
+<link rel="icon" href="colorhands.png" type="image/png">
+<title>idstudio</title>
 
 <style>
 
@@ -59,70 +59,6 @@ body {
     font-family: 'Space Grotesk', sans-serif;
     color: rgb(248, 243, 243);
     overflow-x: hidden;
-}
-
-/* PRELOADER */
-#loader {
-    position: fixed;
-    inset: 0;
-    background: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.8s ease;
-}
-
-.loader-name {
-    font-size: 30px;
-    letter-spacing: 18px;
-    font-weight: 900;
-    color: white;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: loaderReveal 0.8s ease forwards 0.1s;
-    padding-left: 18px;
-}
-
-.loader-role {
-    font-size: 6px;
-    letter-spacing: 6px;
-    color: rgba(255,255,255,0.4);
-    margin-top: 10px;
-    opacity: 0;
-    animation: loaderReveal 0.8s ease forwards 0.4s;
-    padding-left: 6px;
-}
-
-.loader-bar-wrap {
-    width: 200px;
-    height: 1px;
-    background: rgba(255,255,255,0.1);
-    margin-top: 50px;
-    opacity: 0;
-    animation: loaderReveal 0.5s ease forwards 0.6s;
-}
-
-.loader-bar {
-    height: 1px;
-    width: 0%;
-    background: white;
-    transition: width 0.05s linear;
-}
-
-.loader-percent {
-    font-size: 11px;
-    letter-spacing: 3px;
-    color: rgba(255,255,255,0.3);
-    margin-top: 14px;
-    opacity: 0;
-    animation: loaderReveal 0.5s ease forwards 0.6s;
-    padding-left: 3px
-}
-
-@keyframes loaderReveal {
-    to { opacity: 1; transform: translateY(0); }
 }
 
 /* HEADER */
@@ -394,16 +330,6 @@ body {
 </head>
 <body>
 
-<!-- PRELOADER -->
-<div id="loader">
-    <div class="loader-name">CAPEKERE</div>
-    <div class="loader-role">DIRECTOR &nbsp;&nbsp;/&nbsp;&nbsp; VFX ARTIST</div>
-    <div class="loader-bar-wrap">
-        <div class="loader-bar" id="loaderBar"></div>
-    </div>
-    <div class="loader-percent" id="loaderPercent">0%</div>
-</div>
-
 <!-- BACK TO TOP -->
 <a id="backToTop" href="#" aria-label="Back to top">
     <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
@@ -412,15 +338,29 @@ body {
 <!-- HEADER -->
 <div class="container">
     <div class="header">
-        <div>CAPEKERE</div>
-        <div class="right-title">DIRECTOR</div>
+        <div>ID Studio</div>
+        <div class="right-title">Portfolio</div>
     </div>
-    <p class="bio">Hey, I'm Adil — I go by Capekere. I make music videos and build visual effects for artists I believe in. Based in Almaty, I've had the chance to work with ALPHA, Ninety One, Sadraddin and more. This is a collection of everything I've made so far.</p>
+    <p class="bio">ID Studio - a solution for your visual identity.</p>
 </div>
 
 <!-- GRID -->
 <div class="grid">
 
+    <div class="video-card" data-project="ALPHA - Qyzganam" data-role="Director" data-year="2026">
+        <a href="https://www.youtube.com/watch?v=Vg6ZqG01Tco" target="_blank" class="video-link">
+            <video data-src="diesel.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ALPHA - Qyzganam</span></div>
+        </a>
+    </div>
+
+    <div class="video-card" data-project="ALPHA - Pump It" data-role="Director" data-year="2026">
+        <a href="https://www.youtube.com/watch?v=Vg6ZqG01Tco" target="_blank" class="video-link">
+            <video data-src="diesel.mp4" muted loop playsinline></video>
+            <div class="overlay"><span class="title">ALPHA - Pump It</span></div>
+        </a>
+    </div>
+    
     <div class="video-card" data-project="iONE! - DiesEL" data-role="Director" data-year="2026">
         <a href="https://www.youtube.com/watch?v=Vg6ZqG01Tco" target="_blank" class="video-link">
             <video data-src="diesel.mp4" muted loop playsinline></video>
@@ -591,169 +531,20 @@ body {
 
 </div>
 
-<div class="container">
-    <div class="header">
-        <div>CAPEKERE</div>
-        <div class="right-title">VFX ARTIST</div>
-    </div>
-</div>
-
-<!-- GRID -->
-<div class="grid">
-
-    <div class="video-card" data-project="Directed by Kuanysh Beisek" data-role="VFX" data-year="2023">
-        <a href="https://www.kinopoisk.ru/film/5425709/" target="_blank" class="video-link">
-            <video data-src="dastur.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">DASTUR MOVIE</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Aitore Zholdaskali" data-role="VFX" data-year="2025">
-        <a href="https://www.kinopoisk.ru/film/8946904/" target="_blank" class="video-link">
-            <video data-src="auru.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">AURU MOVIE</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Alisher Utev" data-role="VFX" data-year="2025">
-        <a href="https://www.kinopoisk.ru/film/6056623/" target="_blank" class="video-link">
-            <video data-src="dastur2.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">DASTUR 2 MOVIE</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Madi Zhagi" data-role="VFX" data-year="2022">
-        <a href="https://www.youtube.com/watch?v=UsdhuIKmmDY" target="_blank" class="video-link">
-            <video data-src="abuse.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">NINETY ONE - ABUSE</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Askhat Bayanov" data-role="VFX" data-year="2024">
-        <a href="https://www.youtube.com/watch?v=1WP2TfkgtUQ&list=RD1WP2TfkgtUQ&start_radio=1" target="_blank" class="video-link">
-            <video data-src="taxi.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">SADRADDIN - TAXI</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Yernaz Sanat" data-role="VFX" data-year="2025">
-        <a href="https://www.youtube.com/watch?v=0vgB7WlfN0c&list=RD0vgB7WlfN0c&start_radio=1" target="_blank" class="video-link">
-            <video data-src="tikitaka.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">ALPHA - TIKI TAKA</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Tumarbeq" data-role="VFX" data-year="2025">
-        <a href="https://www.instagram.com/p/DOJGcCVCmLn/" target="_blank" class="video-link">
-            <video data-src="meili.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">YENLIK - MEILI SNIPPET</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Tumarbeq" data-role="VFX" data-year="2025">
-        <a href="https://www.instagram.com/p/DPjPzWSDLOt/" target="_blank" class="video-link">
-            <video data-src="kirispe.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">YENLIK - INTRO SNIPPET</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Askhat Bayanov" data-role="VFX" data-year="2024">
-        <a href="https://www.youtube.com/watch?v=pSBojboT454&list=RDpSBojboT454&start_radio=1" target="_blank" class="video-link">
-            <video data-src="okpeleme.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">ACE - OKPELEME</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Tumarbeq" data-role="VFX" data-year="2023">
-        <a href="https://www.instagram.com/p/Cxsw96locvd/" target="_blank" class="video-link">
-            <video data-src="ik2.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">IRINA KAIRATOVNA - TOUR PROMO</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Tumarbeq" data-role="VFX" data-year="2024">
-        <a href="https://www.youtube.com/watch?v=cLiJ-i2x9ok" target="_blank" class="video-link">
-            <video data-src="oneone.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">YENLIK feat. DE LACURE - ONE ONE</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Askhat Bayanov" data-role="VFX" data-year="2024">
-        <a href="https://www.youtube.com/watch?v=an8juF1vtz8" target="_blank" class="video-link">
-            <video data-src="jauapbarma.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">SADRADDIN - JAUAP BAR MA?</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Saltanat Khamzina" data-role="VFX" data-year="2024">
-        <a href="https://www.youtube.com/watch?v=2QaLZz-ZX-k" target="_blank" class="video-link">
-            <video data-src="algabas.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">DE LACURE - ALGABAS</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Askhat Bayanov" data-role="VFX" data-year="2023">
-        <a href="https://www.youtube.com/watch?v=CcB_aO2r-js" target="_blank" class="video-link">
-            <video data-src="jurmapelep.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">NINETY ONE - JUR MAPELEP</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Madi Zhagi" data-role="VFX" data-year="2021">
-        <a href="https://www.youtube.com/watch?v=2LFTgtS_4QM&list=RD2LFTgtS_4QM&start_radio=1" target="_blank" class="video-link">
-            <video data-src="tele2.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">ZAQ - TELE 2</span></div>
-        </a>
-    </div>
-
-    <div class="video-card" data-project="Directed by Kuanysh Beisek" data-role="VFX/COMPOSE" data-year="2022">
-        <a href="https://www.youtube.com/watch?v=Fy83MrpshhA&pp=0gcJCb4KAYcqIYzv" target="_blank" class="video-link">
-            <video data-src="ik.mp4" muted loop playsinline></video>
-            <div class="overlay"><span class="title">IRINA KAIRATOVNA - MIKE KROSSOVKI</span></div>
-        </a>
-    </div>
-
-</div>
-
 <footer class="footer">
   <div class="footer-content">
     <h2 class="footer-title">Open for collaborations</h2>
-    <a href="mailto:adil.kazkenov@yandex.ru" class="footer-email">adil.kazkenov@yandex.ru</a>
+    <a href="mailto:adil.kazkenov@yandex.ru" class="footer-email">idstudio@gmail.com</a>
     <div class="footer-links">
       <a href="https://www.instagram.com/capekere/">Instagram</a>
       <a href="https://vimeo.com/capekere">Vimeo</a>
       <a href="https://t.me/capekere">Telegram</a>
     </div>
-    <p class="footer-copy">© CAPEKERE 2026</p>
+    <p class="footer-copy">© ID Studio 2026</p>
   </div>
 </footer>
 
 <script>
-
-/* LOADER */
-window.addEventListener("load", function() {
-    const loader = document.getElementById("loader");
-    const bar = document.getElementById("loaderBar");
-    const percent = document.getElementById("loaderPercent");
-
-    let progress = 0;
-    const duration = 1500;
-    const steps = 100;
-    const interval = duration / steps;
-
-    const tick = setInterval(() => {
-        progress++;
-        bar.style.width = progress + "%";
-        percent.innerText = progress + "%";
-        if (progress >= 100) {
-            clearInterval(tick);
-            setTimeout(() => {
-                loader.style.opacity = "0";
-                setTimeout(() => loader.style.display = "none", 800);
-            }, 200);
-        }
-    }, interval);
-});
 
 /* BACK TO TOP */
 const backToTop = document.getElementById("backToTop");
