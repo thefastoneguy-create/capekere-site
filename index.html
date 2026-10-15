@@ -9,23 +9,6 @@
 
 <style>
 
-.custom-cursor {
-    position: fixed;
-    width: 14px;
-    height: 14px;
-    border: 1px solid white;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease;
-    z-index: 9999;
-}
-
-.custom-cursor.active {
-    width: 0px;
-    height: 0px;
-}
-
 .cursor-info {
     position: fixed;
     font-size: 11px;
@@ -72,20 +55,6 @@ body {
     width: 110px;
     height: auto;
     display: block;
-}
-
-/* HEADER */
-.header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 25px;
-    font-size: 26px;
-    font-weight: 900;
-}
-
-.right-title {
-    text-align: right;
-    line-height: 1.5;
 }
 
 /* BIO */
@@ -246,7 +215,7 @@ body {
     border-radius: 50%;
     background: transparent;
     color: white;
-    cursor: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -290,11 +259,6 @@ body {
         padding: 24px 20px;
     }
 
-    .header {
-        font-size: 16px;
-        margin-bottom: 16px;
-    }
-
     .bio {
         font-size: 0.85rem;
         margin-bottom: 8px;
@@ -336,7 +300,7 @@ body {
         font-size: 13px;
     }
 
-    .custom-cursor, .cursor-info {
+    .cursor-info {
         display: none !important;
     }
 
@@ -363,10 +327,6 @@ body {
 
 <!-- HEADER -->
 <div class="container">
-    <div class="header">
-        <div>ID Studio</div>
-        <div class="right-title">Portfolio</div>
-    </div>
     <p class="bio">ID Studio - a solution for your visual identity.</p>
 </div>
 
@@ -581,20 +541,12 @@ backToTop.addEventListener("click", (e) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-/* CUSTOM CURSOR */
-const cursor = document.createElement("div");
-cursor.classList.add("custom-cursor");
-document.body.appendChild(cursor);
-
+/* CURSOR INFO */
 const cursorInfo = document.createElement("div");
 cursorInfo.classList.add("cursor-info");
 document.body.appendChild(cursorInfo);
 
-document.body.style.cursor = "none";
-
 document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
     cursorInfo.style.left = e.clientX + 25 + "px";
     cursorInfo.style.top = e.clientY + 25 + "px";
 });
@@ -606,7 +558,6 @@ videoCards.forEach(card => {
         const project = card.dataset.project;
         const role = card.dataset.role;
         const year = card.dataset.year;
-        cursor.classList.add("active");
         cursorInfo.innerHTML = `
             <div style="font-weight:600;">${project}</div>
             <div style="opacity:0.6;">${role}</div>
@@ -615,7 +566,6 @@ videoCards.forEach(card => {
         cursorInfo.style.opacity = "1";
     });
     card.addEventListener("mouseleave", () => {
-        cursor.classList.remove("active");
         cursorInfo.style.opacity = "0";
     });
 });
@@ -645,10 +595,6 @@ const videoObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '200px' });
 
 lazyVideos.forEach(video => videoObserver.observe(video));
-
-if ('ontouchstart' in window) {
-    document.body.style.cursor = '';
-}
 
 </script>
 
